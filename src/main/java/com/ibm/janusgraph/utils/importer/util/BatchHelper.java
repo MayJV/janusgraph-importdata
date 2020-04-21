@@ -69,11 +69,9 @@ public class BatchHelper {
     }
     // 杜子腾:新增经纬度转换
     public static Geoshape convertGeoshape(String inGeoshape) throws ParseException{
-        String[] geoshapes = inGeoshape.split("|");
+        String[] geoshapes = inGeoshape.split("\\|");
         Double latitude = Double.valueOf(geoshapes[0]); // 纬度
         Double longitude = Double.valueOf(geoshapes[1]);// 经度
-        System.out.println("inGeoshape:" + inGeoshape);
-        System.out.println("Geoshape.point(" + latitude + "," + longitude + ")");
         return Geoshape.point(latitude,longitude);
     }
 
