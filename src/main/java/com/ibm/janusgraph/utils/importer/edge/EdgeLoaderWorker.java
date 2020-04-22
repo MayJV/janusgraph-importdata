@@ -122,7 +122,7 @@ public class EdgeLoaderWorker extends Worker {
                     }
                 }
             } else {
-                log.error("Vertex1 or Vertex2 not found.");
+                log.error("Vertex1:" + record.get(leftEdgeFieldName) + " or Vertex2:" + record.get(rightEdgeFieldName) + " not found.");
             }
         } catch (SchemaViolationException e) {
             log.warn(e.getMessage());
