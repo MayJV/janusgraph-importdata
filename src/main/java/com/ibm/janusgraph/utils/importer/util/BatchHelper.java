@@ -70,8 +70,17 @@ public class BatchHelper {
     // 杜子腾:新增经纬度转换
     public static Geoshape convertGeoshape(String inGeoshape) throws ParseException{
         String[] geoshapes = inGeoshape.split("\\|");
+
+        if (geoshapes.length != 2){
+            System.out.println("[ geoshape error ] " + inGeoshape);
+            return null;
+        }
         Double latitude = Double.valueOf(geoshapes[0]); // 纬度
         Double longitude = Double.valueOf(geoshapes[1]);// 经度
+        if (latitude < -90 || latitude < 90 || longitude < -180 | longitude > 180){
+            System.out.println("[ geoshape error ] " + inGeoshape);
+            return null;
+        }
         System.out.println("Geoshape.point(" + latitude + "," + longitude + ")");
         return Geoshape.point(latitude,longitude);
     }

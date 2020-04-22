@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.function.Consumer;
 
+import org.janusgraph.core.attribute.Geoshape;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.janusgraph.core.JanusGraph;
@@ -95,6 +96,10 @@ public class VertexLoaderWorker extends Worker {
         			// TODO Convert properties between data types. e.g. Date
         			Object convertedValue = BatchHelper.convertPropertyValue(value,    							
         					graphTransaction.getPropertyKey(propName).dataType());
+        			// 除去不合规属性
+        			if (null == convertedValue){
+        			    continue;
+                    }
         			v.property(propName, convertedValue);
         		}
         	} 
