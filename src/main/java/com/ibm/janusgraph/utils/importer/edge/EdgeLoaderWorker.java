@@ -83,9 +83,13 @@ public class EdgeLoaderWorker extends Worker {
         String rightVertexLabel = rightVertex.substring(0, rightVertex.indexOf('.'));
         String rightVertexFieldName = rightVertex.substring(rightVertex.indexOf('.') + 1);
 
-        Iterator<Vertex> node_1 = traversal.V().has(leftVertexLabel, leftVertexFieldName,
+//        Iterator<Vertex> node_1 = traversal.V().has(leftVertexLabel, leftVertexFieldName,
+//                record.get(leftEdgeFieldName));
+//        Iterator<Vertex> node_2 = traversal.V().has(rightVertexLabel, rightVertexFieldName,
+//                record.get(rightEdgeFieldName));
+        Iterator<Vertex> node_1 = traversal.V().has( leftVertexFieldName,
                 record.get(leftEdgeFieldName));
-        Iterator<Vertex> node_2 = traversal.V().has(rightVertexLabel, rightVertexFieldName,
+        Iterator<Vertex> node_2 = traversal.V().has( rightVertexFieldName,
                 record.get(rightEdgeFieldName));
 
         try {
