@@ -81,7 +81,6 @@ public class BatchHelper {
             System.out.println("[ geoshape error ] " + inGeoshape);
             return null;
         }
-        System.out.println("Geoshape.point(" + latitude + "," + longitude + ")");
         return Geoshape.point(latitude,longitude);
     }
 
