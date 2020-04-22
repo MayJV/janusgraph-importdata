@@ -77,7 +77,7 @@ public class BatchHelper {
         }
         Double latitude = Double.valueOf(geoshapes[0]); // 纬度
         Double longitude = Double.valueOf(geoshapes[1]);// 经度
-        if (latitude < -90 || latitude < 90 || longitude < -180 | longitude > 180){
+        if (latitude < -90 || latitude > 90 || longitude < -180 | longitude > 180){
             System.out.println("[ geoshape error ] " + inGeoshape);
             return null;
         }
